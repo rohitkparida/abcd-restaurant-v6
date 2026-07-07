@@ -1,0 +1,19 @@
+---
+import PublicPage from '../../components/PublicPage.astro';
+import MenuItemCard from '../../components/MenuItemCard.astro';
+import { menuCategories, menuItems } from '../../data/menu';
+---
+<PublicPage title="Our Menu — ABCD Restaurant" active="/menu/">
+  <section class="menu-hero"><div class="container hero-inner"><div><span>Choose a letter to begin your culinary journey.</span><h1>Our Menu</h1><img class="letters" src="/assets/menu/letter-filters.png" alt="ABCD menu filters" /><p>Rooted in rich culinary traditions of the <em>Sub-Continent</em> and crafted for <em>Global audience.</em></p></div><img class="hero-food" src="/assets/menu-hero-clean.png" alt="Indian biryani, curry, breads and accompaniments" /></div></section>
+  <nav class="category-nav container" aria-label="Menu categories">{menuCategories.map(category => <a href={`#${category.id}`}><img src={category.image} alt="" /><span>{category.label}</span></a>)}</nav>
+  <div class="menu-content container">{menuCategories.map(category => <section id={category.id} class="menu-group"><span class="eyebrow">Aromas of heritage</span><h2>{category.label}</h2><div class="items">{menuItems.filter(item => item.category === category.id).map(item => <MenuItemCard item={item} />)}</div></section>)}</div>
+</PublicPage>
+<script>
+  document.addEventListener('click', event => { const button=(event.target as HTMLElement).closest<HTMLButtonElement>('[data-add-item]'); if(!button)return; const prior=button.textContent; button.textContent='Added ✓'; button.disabled=true; setTimeout(()=>{button.textContent=prior;button.disabled=false},900); });
+</script>
+<style>
+  .menu-hero { overflow:hidden; min-height:650px; }.hero-inner { position:relative; display:grid; grid-template-columns:440px 1fr; padding-top:120px; }.hero-inner > div { position:relative; z-index:2; }.hero-inner span,.eyebrow { color:var(--gold); font-size:12px; font-weight:700; letter-spacing:7px; text-transform:uppercase; }.hero-inner h1 { margin:25px 0 35px; color:var(--maroon); font-family:var(--font-serif); font-size:90px; font-weight:500; }.letters { width:360px; }.hero-inner p { width:380px; margin-top:55px; color:var(--ink); font-size:23px; line-height:1.4; }.hero-inner em { color:var(--gold); font-family:var(--font-serif); font-size:28px; }.hero-food { position:absolute; top:70px; right:-150px; width:900px; }
+  .category-nav { position:relative; z-index:3; display:grid; grid-template-columns:repeat(7,1fr); margin-top:-55px; padding:28px 35px; border:1px solid var(--line); border-radius:14px; background:var(--surface); box-shadow:var(--shadow-soft); }.category-nav a { display:grid; justify-items:center; gap:9px; border-right:1px solid #ead8bf; color:var(--maroon); font-size:10px; font-weight:700; text-align:center; }.category-nav a:last-child{border:0}.category-nav img{width:50px;height:48px;object-fit:contain}
+  .menu-content { padding-top:80px; }.menu-group { padding:45px 0 75px; scroll-margin-top:20px; }.menu-group > .eyebrow { display:block; letter-spacing:3px; text-align:center; }.menu-group h2 { display:flex; align-items:center; gap:22px; margin:8px auto 35px; color:var(--maroon); font-family:var(--font-serif); font-size:43px; font-weight:500; text-align:center; }.menu-group h2::before,.menu-group h2::after{content:'';height:1px;flex:1;background:#d9b797}.items{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  @media(max-width:900px){.hero-inner{grid-template-columns:1fr}.hero-food{opacity:.25}.category-nav{grid-template-columns:repeat(4,1fr);gap:25px 0}.items{grid-template-columns:1fr}}
+</style>

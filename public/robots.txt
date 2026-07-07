@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://abcdrestaurant.com/sitemap.xml

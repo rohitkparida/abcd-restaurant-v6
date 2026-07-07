@@ -1,0 +1,22 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand"><img src="/assets/logo.png" alt="ABCD Restaurant" /></div>
+    <section><h2>Visit Us</h2><p>417 Lancaster Ave,<br />Malvern, Pennsylvania 19355</p><a href="https://www.google.com/maps/search/?api=1&query=ABCD+Restaurant+417+Lancaster+Ave+Malvern+PA+19355">Get Directions →</a></section>
+    <section><h2>Hours</h2><p><strong>Mon – Fri</strong><br />11:00am – 3:00pm<br />5:00pm – 10:00pm</p><p><strong>Sat – Sun</strong><br />11:00am – 11:00pm</p></section>
+    <section><h2>Stay Connected</h2><p>Be the first to know about our specials, events &amp; offers.</p><form><label class="sr-only" for="footer-email">Email address</label><input id="footer-email" type="email" placeholder="Your email" required /><button aria-label="Subscribe">→</button></form></section>
+  </div>
+  <div class="container copyright">© 2026 ABCD Restaurant. All rights reserved.</div>
+</footer>
+<style>
+  .site-footer { padding: 82px 0 35px; }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr .9fr 1.25fr; gap: 56px; }
+  .footer-brand img { width: 150px; }
+  h2 { margin: 0 0 24px; color: var(--maroon); font-family: var(--font-serif); font-size: 15px; letter-spacing: 3px; text-transform: uppercase; }
+  p { color: var(--muted); font-size: 12px; line-height: 1.65; }
+  a { color: var(--maroon); font-size: 12px; font-weight: 800; }
+  form { position: relative; margin-top: 22px; }
+  input { width: 100%; height: 38px; padding: 0 46px 0 16px; border: 1px solid var(--maroon); border-radius: var(--radius-pill); background: transparent; }
+  button { position: absolute; top: 3px; right: 3px; width: 32px; height: 32px; border: 0; border-radius: 50%; background: var(--maroon); color: white; }
+  .copyright { margin-top: 58px; padding-top: 30px; border-top: 1px solid #e8d8c4; text-align: center; color: var(--muted); font-size: 10px; }
+  @media (max-width: 800px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+</style>

@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import type { PublicRoute } from '../types/domain';
+interface Props { title:string; description?:string; active:PublicRoute }
+const { title, description, active } = Astro.props;
+---
+<BaseLayout title={title} description={description}><SiteHeader active={active} /><main><slot /></main><SiteFooter /></BaseLayout>

@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';import ExceptionState from '../../../components/ExceptionState.astro';
+---
+<BaseLayout title="Payment Status — ABCD Restaurant" noIndex><main data-state><ExceptionState icon="!" eyebrow="Payment failed" title="We couldn’t complete your payment." copy="Your order has not been charged. Please review your payment details and try again." action="Try Again" href="/order/payment/" /></main></BaseLayout>
+<script>const cancelled=new URLSearchParams(location.search).get('state')==='cancelled';if(cancelled){document.querySelector('span')!.textContent='Payment cancelled';document.querySelector('h1')!.textContent='Your payment was cancelled.';document.querySelector('p')!.textContent='No charge was made. Your cart is still available when you are ready.';document.querySelector('a')!.textContent='Return to Cart →';document.querySelector('a')!.setAttribute('href','/order/cart/')}</script>
