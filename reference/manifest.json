@@ -1,6 +1,6 @@
 [
   { "id":"home", "route":"/", "file":"../figma-mockups/home.png", "width":1379, "height":4698, "authority":"figma-export" },
-  { "id":"menu", "route":"/menu/", "file":"v5/menu.png", "width":1440, "height":3907, "authority":"v5-baseline" },
+  { "id":"menu", "route":"/menu/", "file":"../figma-mockups/menu-frame-21-full.png", "width":1379, "height":3740, "authority":"figma-export" },
   { "id":"our-story", "route":"/our-story/", "file":"v5/our-story.png", "width":1440, "height":2718, "authority":"v5-baseline" },
   { "id":"gallery", "route":"/gallery/", "file":"v5/gallery.png", "width":1440, "height":3024, "authority":"inferred" },
   { "id":"contact", "route":"/contact/", "file":"v5/contact.png", "width":1440, "height":2005, "authority":"inferred" },
