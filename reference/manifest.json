@@ -1,5 +1,5 @@
 [
-  { "id":"home", "route":"/", "file":"approved/home-1380.png", "width":1380, "height":4698, "authority":"approved-mockup" },
+  { "id":"home", "route":"/", "file":"../figma-mockups/home.png", "width":1379, "height":4698, "authority":"figma-export" },
   { "id":"menu", "route":"/menu/", "file":"v5/menu.png", "width":1440, "height":3907, "authority":"v5-baseline" },
   { "id":"our-story", "route":"/our-story/", "file":"v5/our-story.png", "width":1440, "height":2718, "authority":"v5-baseline" },
   { "id":"gallery", "route":"/gallery/", "file":"v5/gallery.png", "width":1440, "height":3024, "authority":"inferred" },

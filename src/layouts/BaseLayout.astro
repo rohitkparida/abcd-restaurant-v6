@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { sitePath } from '../lib/site';
 interface Props { title: string; description?: string | undefined; noIndex?: boolean | undefined }
 const { title, description = 'ABCD Restaurant — authentic Indian cuisine in Malvern, Pennsylvania.', noIndex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, 'https://abcdrestaurant.com');
@@ -8,10 +9,10 @@ const canonical = new URL(Astro.url.pathname, 'https://abcdrestaurant.com');
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href={sitePath('favicon.ico')} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />

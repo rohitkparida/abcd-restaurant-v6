@@ -37,7 +37,9 @@ try {
       reducedMotion: 'reduce',
     });
     const page = await context.newPage();
-    await page.goto(new URL(entry.route, baseURL).href, { waitUntil: 'networkidle' });
+    const deploymentRoot = baseURL.endsWith('/') ? baseURL : `${baseURL}/`;
+    const routeURL = new URL(entry.route.replace(/^\//, ''), deploymentRoot).href;
+    await page.goto(routeURL, { waitUntil: 'networkidle' });
     await page.emulateMedia({ reducedMotion: 'reduce' });
     const currentPath = path.join(directory, 'current.png');
     await page.screenshot({ path: currentPath, fullPage: true, animations: 'disabled' });

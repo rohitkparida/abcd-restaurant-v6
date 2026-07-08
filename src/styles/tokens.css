@@ -8,6 +8,7 @@
   --ink: #432d32;
   --muted: #786861;
   --line: #dfc49b;
+  /* 80px gutters at the 1380px reference viewport. */
   --content-max: 1220px;
   --gutter: 80px;
   --radius-sm: 6px;

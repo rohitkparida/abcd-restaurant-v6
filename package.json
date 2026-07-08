@@ -16,6 +16,7 @@
     "test:links": "node scripts/check-links.mjs",
     "visual:compare": "node scripts/visual-compare.mjs",
     "qa:visual": "node scripts/capture-reference-qa.mjs",
+    "qa:route": "npm run build && node scripts/route-qa.mjs",
     "test": "npm run check && npm run build && npm run test:links && playwright test"
   },
   "dependencies": {
