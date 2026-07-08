@@ -1,0 +1,751 @@
+[
+  {
+    "id": "appetizers",
+    "letter": "A",
+    "title": "Appetizers",
+    "sections": [
+      {
+        "title": "The Imperial Tandoor",
+        "note": "Flame-charred legacies",
+        "items": [
+          {
+            "name": "Maharaja Prawns",
+            "price": "21.59",
+            "description": "Tiger prawns infused with citrus and House special Tandoori essence, kissed by fire for a perfect balance of heat, aroma, and oceanic sweetness.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Pesto Shrimp Emeraldo",
+            "price": "23.59",
+            "description": "Succulent Jumbo Prawns marinated in a vibrant basil pesto, kissed by the tandoor flame for a smoky, aromatic finish.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Royal Seekh of Kheema",
+            "price": "19.59",
+            "description": "Hand-crafted mutton skewers blended with our heirloom spices, cooked over glowing flames to create a delicately smoky, melt-in-mouth experience.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Classic Tandoori Chicken",
+            "price": "18.59",
+            "description": "Succulent bone-in chicken infused with a secret heritage spice blend, roasted to tender perfection, with a smoky aroma that lingers in every bite.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Crimson Kashmiri Murgh Tikka",
+            "price": "18.59",
+            "description": "Chicken marinated for 24 hours in a rich Kashmiri chili-spice symphony, then flame-seared for a fiery, jewel-toned finish.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Malai Silk Murgh Kebab",
+            "price": "19.59",
+            "description": "Velvety morsels of chicken enriched with cream, green chili, and cardamom, kissed with subtle smoke, melting on the palate with every bite.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Achaari Charred Wings",
+            "price": "18.59",
+            "description": "Orchard-raised wings marinated in bold pickling spices, crisped over embers to deliver a tangy, smoky, and deeply flavorful bite.",
+            "diet": "nonveg",
+            "spicy": true
+          },
+          {
+            "name": "Artisan Ember Paneer",
+            "price": "17.59",
+            "description": "House-pressed paneer steaks enriched with a medley of spices, charred to perfection with a subtle smoky finish, paired with roasted bell peppers.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Verdant Hariyali Paneer",
+            "price": "18.59",
+            "description": "Paneer enveloped in a vibrant blend of fresh mint, spinach, and toasted spices, offering a bright, herbaceous, and indulgent flavor experience.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Charred Soya Chaap",
+            "price": "17.59",
+            "description": "Tender batons of delhi waala Soya chaap warmly slept in our house special marinade, and then slowly grilled & charred in tandoor to achieve a charred exterior and succulent bite.",
+            "diet": "veg",
+            "spicy": false
+          }
+        ]
+      },
+      {
+        "title": "Dragon & Spice - Soups",
+        "note": "A vibrant journey blending the bold spices of India with the wok-fired flavors of Chinese. Add on: Custom House Veggies (+1) / Egg (+2) / Chicken (+3) / Prawn (+4) / Mixed (+5)",
+        "items": [
+          {
+            "name": "Sweet Corn Soup",
+            "price": "8.99",
+            "description": "A comforting Indo-Chinese classic - silky broth with tender sweet corn kernels, gently seasoned with ginger, garlic, and a touch of soy. Add on your choice of protein or veggies to make it a meal.",
+            "diet": "custom",
+            "spicy": false
+          },
+          {
+            "name": "Tom Yum Soup",
+            "price": "9.99",
+            "description": "A bold, aromatic hot & sour Thai-inspired broth infused with lemongrass, galangal, kaffir lime leaves, and fiery chilies - a bright, invigorating bowl with every sip. Add on your choice of protein or veggies.",
+            "diet": "custom",
+            "spicy": false
+          }
+        ]
+      },
+      {
+        "title": "Dragon & Spice - Appetizers",
+        "note": "A vibrant journey blending the bold spices of India with the wok-fired flavors of Chinese",
+        "items": [
+          {
+            "name": "Veg Manchurian",
+            "price": "14.59",
+            "description": "Crisp vegetable balls tossed in a mildly spicy soy-garlic sauce.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Gobi Manchurian",
+            "price": "14.59",
+            "description": "Cauliflower florets fried and coated in tangy Indo-Chinese sauce.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Chilli Paneer",
+            "price": "15.99",
+            "description": "Soft paneer cubes sauteed with capsicum, onion, and tangy chili sauce.",
+            "diet": "veg",
+            "spicy": true
+          },
+          {
+            "name": "Hyderabadi Chicken 65",
+            "price": "16.59",
+            "description": "South-Indian style fried chicken with bold masala and curry leaf tempering.",
+            "diet": "nonveg",
+            "spicy": true
+          },
+          {
+            "name": "Chilli Chicken",
+            "price": "16.59",
+            "description": "Juicy chicken pieces tossed with bell peppers and spicy Indo-Chinese sauce.",
+            "diet": "nonveg",
+            "spicy": true
+          },
+          {
+            "name": "Chicken Majestic",
+            "price": "17.59",
+            "description": "Tender chicken cooked with garlic, chili, and light soy sauce.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Chicken Lollipops (Wet)",
+            "price": "17.59",
+            "description": "Crispy chicken wings coated in a glossy, spicy sauce.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Drums of Heaven",
+            "price": "17.59",
+            "description": "Crispy chicken drumettes served with house-made honey-chili glaze.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Dragon Chicken",
+            "price": "16.99",
+            "description": "Wok-tossed chicken with chili, garlic, and hint of sesame.",
+            "diet": "nonveg",
+            "spicy": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "biryani-bread",
+    "letter": "B",
+    "title": "Biryani & Bread",
+    "sections": [
+      {
+        "title": "Murli Ka Zaiqa",
+        "note": "The Royal Tradition",
+        "items": [
+          {
+            "name": "Hyderabadi Chicken Dum Biryani",
+            "price": "17.59",
+            "description": "Fragrant basmati rice layered with marinated chicken, slow-cooked in the traditional Dum style with exotic herbs and saffron.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Vijayawada Boneless Chicken Biryani",
+            "price": "18.59",
+            "description": "Tender boneless chicken marinated in a bold Andhra spice blend, layered over fragrant basmati rice cooked with whole spices, fresh mint, and coriander - rich, fiery, and deeply satisfying.",
+            "diet": "nonveg",
+            "spicy": true
+          },
+          {
+            "name": "Hyderabadi Mutton Dum Biryani",
+            "price": "19.59",
+            "description": "Tender mutton pieces marinated overnight in yogurt and spices, layered with basmati rice and slow-cooked to perfection.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Vijayawada Style Veg Biryani",
+            "price": "18.59",
+            "description": "A medley of fresh vegetables and paneer layered with aromatic basmati rice and cooked with subtle spices.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Hyderabadi Veg Dum Biryani",
+            "price": "16.59",
+            "description": "A medley of fresh vegetables layered with aromatic basmati rice and dum cooked with subtle spices.",
+            "diet": "veg",
+            "spicy": false
+          }
+        ]
+      },
+      {
+        "title": "Prelude Plates",
+        "note": "Devouring handcrafted recipes where traditional techniques meet contemporary expression",
+        "items": [
+          {
+            "name": "Uff Uff Wings",
+            "price": "17.59",
+            "description": "When an enthusiastic Odiyan chilli meets the Spicy Telugu - We say Uff Uff.",
+            "diet": "nonveg",
+            "spicy": true
+          },
+          {
+            "name": "Kheema Muttilu",
+            "price": "18.99",
+            "description": "Rathnamma's Recipe - Rustic minced meat dumplings with fresh herbs, and spices, pounded together for a rich and savory bite.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Chettinad Mutton Sukka",
+            "price": "18.99",
+            "description": "Our Chef Bala's creation - Slow roasted mutton, tossed in roasted spices, curry leaves, and black pepper in achieving a semi dry, intensely aromatic South Indian Classic.",
+            "diet": "nonveg",
+            "spicy": true
+          },
+          {
+            "name": "Gongura Chicken Dry",
+            "price": "17.59",
+            "description": "Succulent pieces of chicken wok-tossed with tangy gongura (sorrel leaves), infused with aromatic spices, garlic, and red chilies, finished with a smoky wok flavor for an irresistible bite.",
+            "diet": "nonveg",
+            "spicy": true
+          },
+          {
+            "name": "Mangalorean Pompano Fry",
+            "price": "22.59",
+            "description": "Pompano bathed in a beauty of spices, rested in its peace. Patiently grilled on our well-seasoned Cast-Iron.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Hyderabadi Royal Haleem",
+            "price": "18.59",
+            "description": "Basss... Khaa ke dekho! A royal delicacy slow-cooked to perfection.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Marag",
+            "price": "18.99",
+            "description": "Shaan bolthe hum isko! Exquisite, rich, and flavorful soup.",
+            "diet": "nonveg",
+            "spicy": false
+          }
+        ]
+      },
+      {
+        "title": "Artisanal Breads",
+        "items": [
+          {
+            "name": "Plain Naan",
+            "price": "3.59",
+            "description": "Fresh and soft clay oven baked bread.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Handmade Tandoori Roti",
+            "price": "4.59",
+            "description": "Whole wheat bread baked in tandoor.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Butter Naan",
+            "price": "4.59",
+            "description": "Layered flatbread slathered in butter.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Laccha Paratha",
+            "price": "5.59",
+            "description": "Flaky, multi-layered whole wheat bread.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Garlic Naan",
+            "price": "4.99",
+            "description": "Infused with chopped garlic and butter.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Paneer Paratha",
+            "price": "5.59",
+            "description": "Stuffed with spiced Indian cottage cheese.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Chilly Garlic Naan",
+            "price": "5.59",
+            "description": "Topped with spicy green chilies and garlic.",
+            "diet": "veg",
+            "spicy": true
+          },
+          {
+            "name": "Cheese Naan",
+            "price": "5.59",
+            "description": "Stuffed generously with melted cheese.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Chilly Cheese Naan",
+            "price": "6.59",
+            "description": "Naan stuffed with spicy green chilies and melted cheese.",
+            "diet": "veg",
+            "spicy": true
+          },
+          {
+            "name": "Bhature",
+            "price": "4.59",
+            "description": "Fluffy deep-fried leavened sourdough bread.",
+            "diet": "veg",
+            "spicy": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "curries",
+    "letter": "C",
+    "title": "Curries",
+    "sections": [
+      {
+        "title": "Anantha Shakhahaari",
+        "note": "Vegetarian Elegance",
+        "items": [
+          {
+            "name": "Makhanwala Paneer Butter Masala",
+            "price": "16.99",
+            "description": "Soft paneer cubes enveloped in a luscious tomato-butter sauce, finished with cream and delicate Indian spices.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Paneer Tikka Masala",
+            "price": "17.99",
+            "description": "Tandoor Char-grilled paneer simmered in a fragrant onion-tomato masala, kissed with subtle smokiness.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Paneer Lababdar",
+            "price": "16.99",
+            "description": "Paneer cubes in a rich velvety, buttery gravy with aromatic spices and a hint of cream.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Palak Paneer",
+            "price": "16.99",
+            "description": "Fresh spinach puree cooked with paneer cubes, lightly tempered with garlic and cumin.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Malai Kofta",
+            "price": "17.99",
+            "description": "Pillowy dumplings of paneer and seasonal vegetables, floating in our lovely creamy secret spice infused, riped tomato gravy.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Sarson Ka Saag",
+            "price": "16.99",
+            "description": "Slow-cooked mustard greens with a balance of spices, rustic and comforting.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Mushroom Do Pyaza",
+            "price": "16.99",
+            "description": "Mushrooms sauteed with layers of onions and traditional masala.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Mix Veg Jalfrezi",
+            "price": "16.99",
+            "description": "Seasonal vegetables sauteed with peppers and onions in a tangy tomato masala.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Dal Makhani",
+            "price": "16.99",
+            "description": "Black lentils and kidney beans slow cooked with butter and cream for rich flavor.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Dhaaba waala Tadka Dal",
+            "price": "15.99",
+            "description": "Yellow lentils tempered with cumin, garlic, and mild spices. This is simple, but taste our recipe and go crazy!",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Punjabi Chole",
+            "price": "16.99",
+            "description": "Chickpeas cooked with earthy, aromatic masalas to deliver robust and traditional flavor with every bite.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Kadhi Pakora",
+            "price": "16.99",
+            "description": "Gram flour fritters simmered in yogurt-based curry with light tempering.",
+            "diet": "veg",
+            "spicy": false
+          }
+        ]
+      },
+      {
+        "title": "The Mamsa Rasoi",
+        "note": "Non-Vegetarian Mastery",
+        "items": [
+          {
+            "name": "Rogan Josh",
+            "price": "19.99",
+            "description": "Mutton cooked in yogurt and Kashmiri red chili gravy for gentle warmth.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Lal Maas",
+            "price": "19.99",
+            "description": "Traditional fiery mutton curry prepared with secret chilies.",
+            "diet": "nonveg",
+            "spicy": true
+          },
+          {
+            "name": "Telangana Dhaavath Mutton Curry",
+            "price": "19.99",
+            "description": "Rustic, slow-cooked mutton infused with the region's signature bold spices and aromatic undertones.",
+            "diet": "nonveg",
+            "spicy": true
+          },
+          {
+            "name": "Munakkaya Mutton",
+            "price": "19.99",
+            "description": "Mutton and drumstick pods in a lightly spiced, hearty gravy, offering layered flavors and depth.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Mutton Vindaloo",
+            "price": "19.99",
+            "description": "Tangy Goan-style curry with a gentle heat, balancing spices and vinegar notes for a bold yet refined taste.",
+            "diet": "nonveg",
+            "spicy": true
+          },
+          {
+            "name": "Saag Gosht",
+            "price": "19.99",
+            "description": "Succulent mutton slow-cooked with fresh spinach, delivering an earthy, aromatic, and tender curry.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Nilgiri Mutton Kofta",
+            "price": "19.99",
+            "description": "Hand-rolled mutton dumplings in our signature spiced green herb sauce, delicate yet flavorful.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Kheema Matar",
+            "price": "19.99",
+            "description": "Minced mutton cooked with peas in lightly spiced masala.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Kheema Mutti Curry",
+            "price": "19.99",
+            "description": "Home made kheema balls, served in our aromatic southern spiced sauce.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Goan Prawn Curry",
+            "price": "22.99",
+            "description": "Prawns simmered in coconut-tamarind coastal gravy.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Goan Fish Curry",
+            "price": "21.99",
+            "description": "Fresh fish cooked in tangy coconut-based gravy.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Chepala Pulusu",
+            "price": "21.99",
+            "description": "Tamarind fish stew with subtle South Indian spices.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Punjabi Dhaaba waala Anda Masala",
+            "price": "16.99",
+            "description": "Boiled eggs simmered in light onion-tomato masala.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Delhi Waala Butter Chicken",
+            "price": "17.99",
+            "description": "Tandoor-roasted chicken in a tomato-butter gravy with mild spices.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Kolhapuri Chicken",
+            "price": "17.99",
+            "description": "Chicken cooked with lightly roasted Kolhapuri masala.",
+            "diet": "nonveg",
+            "spicy": true
+          },
+          {
+            "name": "Chicken Do Pyaza",
+            "price": "17.99",
+            "description": "Chicken cooked with layers of onions in a simple masala.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Chicken Korma",
+            "price": "17.99",
+            "description": "Chicken in mild yogurt and nut-based sauce.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Chicken Tikka Masala",
+            "price": "17.99",
+            "description": "Grilled chicken in spiced tomato-onion masala.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Chicken Vindaloo",
+            "price": "17.99",
+            "description": "Spicy and tangy Goan chicken curry.",
+            "diet": "nonveg",
+            "spicy": true
+          },
+          {
+            "name": "Andhra Home made Chicken Curry",
+            "price": "17.99",
+            "description": "Bone-In Chicken cooked with regional spices for balanced heat.",
+            "diet": "nonveg",
+            "spicy": true
+          },
+          {
+            "name": "Ginger Chicken",
+            "price": "17.99",
+            "description": "Old Hyderabadi waala Chicken simmered in a crazy gravy of fresh ginger, green chili.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Hyderabadi Dum Chicken",
+            "price": "17.99",
+            "description": "Slow-cooked chicken sealed with aromatic spices.",
+            "diet": "nonveg",
+            "spicy": false
+          },
+          {
+            "name": "Orissa Dhaaba Style Rambha Chicken",
+            "price": "17.99",
+            "description": "Regional-style chicken curry with secret sauce and spices.",
+            "diet": "nonveg",
+            "spicy": false
+          }
+        ]
+      },
+      {
+        "title": "Wok & Fire",
+        "note": "Custom House Veggies (+1) / Egg (+2) / Chicken (+3) / Prawn (+4) / Mixed (+5)",
+        "items": [
+          {
+            "name": "Wok fired Soft Noodles",
+            "price": "14.59",
+            "description": "Classic stir-fried noodles with vegetables and light soy seasoning.",
+            "diet": "custom",
+            "spicy": false
+          },
+          {
+            "name": "Schezwan Noodles",
+            "price": "15.59",
+            "description": "Spicy noodles with a bold, exotic Sichuan peppers schezwan sauce.",
+            "diet": "custom",
+            "spicy": true
+          },
+          {
+            "name": "Singapore Noodles",
+            "price": "16.59",
+            "description": "Thin rice noodles stir-fried with curry-flavored vegetables and protein of choice.",
+            "diet": "custom",
+            "spicy": false
+          },
+          {
+            "name": "Pad Thai",
+            "price": "16.59",
+            "description": "Rice noodles tossed with egg, vegetables, and tamarind-infused sauce.",
+            "diet": "custom",
+            "spicy": false
+          },
+          {
+            "name": "Flamed & Tossed Fried Rice",
+            "price": "14.59",
+            "description": "Fragrant rice stir-fried with vegetables and house made seasonings.",
+            "diet": "custom",
+            "spicy": false
+          },
+          {
+            "name": "Schezwan Fried Rice",
+            "price": "15.59",
+            "description": "Lightly spice Rice with a twist of our house made schezwan sauce.",
+            "diet": "custom",
+            "spicy": true
+          },
+          {
+            "name": "Chilli Garlic Fried Rice",
+            "price": "15.59",
+            "description": "An amalgamation of our Chilli & garlic into the flame burnt wok with granular rice.",
+            "diet": "custom",
+            "spicy": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "desserts-drinks",
+    "letter": "D",
+    "title": "Desserts & Drinks",
+    "sections": [
+      {
+        "title": "Desserts",
+        "items": [
+          {
+            "name": "Misti Doi",
+            "price": "8.99",
+            "description": "Traditional Bengali sweet yogurt, slow-cooked to caramelized perfection.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Gulab Jamun",
+            "price": "6.99",
+            "description": "Classic warm golden dumplings resting in rose-scented syrup, served hot.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Tropical Pina Colada Tres Leches",
+            "price": "9.99",
+            "description": "A luscious tres leches cake infused with pineapple and coconut, delivering a creamy tropical finish in every bite.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Decadent Chocolate Mousse Brownie",
+            "price": "8.99",
+            "description": "Rich fudgy brownie layered with silky chocolate mousse for an indulgent, deeply satisfying dessert experience.",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Custard Caramel Devour Puff",
+            "price": "9.99",
+            "description": "Delicate pastry filled with velvety custard, finished with golden caramel for a light yet irresistible treat.",
+            "diet": "veg",
+            "spicy": false
+          }
+        ]
+      },
+      {
+        "title": "Drinks",
+        "items": [
+          {
+            "name": "Mango Lassi",
+            "price": "5.59",
+            "description": "",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Thumps up",
+            "price": "3.99",
+            "description": "",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Limca",
+            "price": "3.99",
+            "description": "",
+            "diet": "veg",
+            "spicy": false
+          },
+          {
+            "name": "Jeera",
+            "price": "3.59",
+            "description": "",
+            "diet": "veg",
+            "spicy": false
+          }
+        ]
+      }
+    ]
+  }
+]
