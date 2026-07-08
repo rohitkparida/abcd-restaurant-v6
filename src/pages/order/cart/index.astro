@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const backdropItems = [
+  ['murgh-malai.png','Murgh Malai Tikka'], ['paneer-achari.png','Paneer Achari Tikka'],
+  ['seekh-kebab.png','Seekh Kebab'], ['tandoori-chicken.png','Tandoori Chicken'],
+  ['dal-makhani.png','Dal Makhani'], ['butter-chicken.png','Butter Chicken'],
+  ['malabar-prawn.png','Malabar Prawn Curry'], ['paneer-kadai.png','Paneer Kadai'],
+];
+const cartItems = [
+  ['order-tandoori.png','Tandoori Chicken',19.99,1,'meat'],
+  ['order-butter.png','Butter Chicken',22.99,1,'meat'],
+  ['order-naan.png','Garlic Naan',5.59,2,'vegetarian'],
+  ['order-biryani.png','Lucknowi Murgh Biryani',22.99,1,'meat'],
+];
+---
+<BaseLayout title="Your Order — ABCD Restaurant" noIndex>
+  <main class="cart-stage">
+    <div class="menu-underlay" aria-hidden="true">
+      <section><p>The Imperial Tandoor</p><h2>Flame-charred legacies</h2><div class="backdrop-grid">{backdropItems.slice(0,4).map(([image,name])=><article><img src={`/assets/menu/${image}`} alt="" /><div><h3>{name}</h3><p>Classic recipes prepared with aromatic spices.</p><strong>$18.99</strong></div><span>+ Add</span></article>)}</div></section>
+      <section><p>Slow-cooked perfections</p><h2>Curries that comfort</h2><div class="backdrop-grid">{backdropItems.slice(4).map(([image,name])=><article><img src={`/assets/menu/${image}`} alt="" /><div><h3>{name}</h3><p>Comforting flavours simmered with care.</p><strong>$18.99</strong></div><span>+ Add</span></article>)}</div></section>
+    </div>
+    <div class="scrim" aria-hidden="true"></div>
+    <aside class="cart-drawer" aria-labelledby="cart-title">
+      <header><h1 id="cart-title">Your Order</h1><p>All orders are sent directly to our kitchen.</p></header>
+      <div class="cart-items">{cartItems.map(([image,name,price,quantity,type])=><article data-price={price} data-quantity={quantity}><img src={`/assets/cart/${image}`} alt="" /><div class="item-copy"><h2>{name}<i class={type}></i></h2><output>${Number(price).toFixed(2)}</output></div><div class="stepper" aria-label={`Quantity for ${name}`}><button type="button" data-change="-1" aria-label={`Decrease ${name}`}>−</button><b>{quantity}</b><button type="button" data-change="1" aria-label={`Increase ${name}`}>+</button></div></article>)}</div>
+      <div class="totals"><dl><div><dt>Items (<span data-count>5</span>)</dt><dd data-subtotal>$77.15</dd></div><div><dt>Tax</dt><dd data-tax>$5.40</dd></div><div class="total"><dt>Total</dt><dd data-total>$82.55</dd></div></dl><a href="/order/checkout/">Checkout <span>→</span></a></div>
+    </aside>
+  </main>
+</BaseLayout>
+<script>
+  const drawer=document.querySelector<HTMLElement>('.cart-drawer');
+  const money=(value:number)=>`$${value.toFixed(2)}`;
+  const update=()=>{
+    const rows=[...document.querySelectorAll<HTMLElement>('.cart-items article')];
+    let count=0,subtotal=0;
+    rows.forEach(row=>{const quantity=Number(row.dataset.quantity);const price=Number(row.dataset.price);count+=quantity;subtotal+=quantity*price;row.querySelector('b')!.textContent=String(quantity);row.querySelector('output')!.textContent=money(quantity*price)});
+    const tax=subtotal*.07;drawer!.querySelector<HTMLElement>('[data-count]')!.textContent=String(count);drawer!.querySelector<HTMLElement>('[data-subtotal]')!.textContent=money(subtotal);drawer!.querySelector<HTMLElement>('[data-tax]')!.textContent=money(tax);drawer!.querySelector<HTMLElement>('[data-total]')!.textContent=money(subtotal+tax);
+  };
+  drawer?.addEventListener('click',event=>{const button=(event.target as HTMLElement).closest<HTMLButtonElement>('[data-change]');if(!button)return;const row=button.closest<HTMLElement>('article')!;row.dataset.quantity=String(Math.max(0,Number(row.dataset.quantity)+Number(button.dataset.change)));update()});
+</script>
+<style>
+  .cart-stage{position:relative;min-height:984px;overflow:hidden;background:#f4eadc}.menu-underlay{position:absolute;inset:0 366px 0 0;padding:48px 70px;filter:blur(3px);background:var(--canvas)}.menu-underlay section+section{margin-top:120px}.menu-underlay section>p{text-align:center;color:var(--gold);font-size:10px;font-weight:800;letter-spacing:3px;text-transform:uppercase}.menu-underlay h2{margin:8px 0 45px;text-align:center;color:var(--maroon);font-family:var(--font-serif);font-size:42px}.backdrop-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}.backdrop-grid article{display:grid;grid-template-columns:105px 1fr auto;gap:15px;align-items:center;min-width:0;padding:14px;border-radius:10px;background:#fffaf2;box-shadow:var(--shadow-card)}.backdrop-grid img{width:105px;height:95px;border-radius:7px;object-fit:cover}.backdrop-grid h3{margin:0;color:var(--ink);font-family:var(--font-serif);font-size:21px;white-space:nowrap}.backdrop-grid p{font-size:11px;color:var(--muted)}.backdrop-grid strong{color:var(--gold)}.backdrop-grid article>span{padding:10px;border-radius:6px;background:var(--maroon);color:white;font-size:11px}.scrim{position:absolute;inset:0 366px 0 0;background:rgb(62 54 44 / 33%)}.cart-drawer{position:relative;z-index:2;display:flex;flex-direction:column;width:366px;min-height:984px;margin-left:auto;padding:38px 29px 29px;border-radius:12px 0 0 12px;background:#fffdf9;box-shadow:-9px 0 25px rgb(60 34 20 / 6%)}.cart-drawer header h1{margin:0;color:var(--maroon);font-family:var(--font-serif);font-size:31px}.cart-drawer header p{margin:25px 0 30px;color:var(--muted);font-size:13px}.cart-items{display:grid;gap:24px}.cart-items article{display:grid;grid-template-columns:65px minmax(0,1fr) 100px;gap:13px;align-items:start}.cart-items img{width:65px;height:59px;border-radius:5px;object-fit:cover}.item-copy h2{margin:2px 0 8px;color:var(--ink);font-size:16px;line-height:1.25}.item-copy i{display:inline-block;width:7px;height:7px;margin-left:3px;border-radius:50%;background:#e62d36}.item-copy i.vegetarian{background:#19a65b}.item-copy output{font-size:14px}.stepper{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;height:38px;border:1px solid #e8caa7;border-radius:7px}.stepper button{height:100%;border:0;background:transparent;color:var(--maroon);font-weight:900}.stepper b{text-align:center;color:var(--maroon);font-size:14px}.totals{margin-top:auto;padding-top:28px;border-top:1px solid #e4cba8}.totals dl{margin:0}.totals dl>div{display:flex;justify-content:space-between;margin-bottom:18px}.totals dt,.totals dd{margin:0}.totals .total{align-items:baseline;color:var(--maroon);font-size:23px;font-weight:900}.totals .total dd{font-size:28px}.totals>a{display:flex;align-items:center;justify-content:center;gap:22px;height:49px;border-radius:7px;background:#871434;color:white;font-size:14px;font-weight:900}.totals>a span{display:grid;place-items:center;width:30px;height:30px;border:1px solid rgb(255 255 255 / 42%);border-radius:50%;font-size:20px}
+  @media(max-width:700px){.cart-stage{min-height:100svh}.menu-underlay,.scrim{display:none}.cart-drawer{width:100%;min-height:100svh;padding:30px 18px;border-radius:0}.cart-items article{grid-template-columns:58px minmax(0,1fr) 92px}.cart-items img{width:58px;height:54px}.totals{margin-top:55px}}
+</style>

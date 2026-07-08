@@ -1,0 +1,25 @@
+:root {
+  --canvas: #f9f1e5;
+  --canvas-alt: #f6eddf;
+  --surface: #fffaf1;
+  --maroon: #651624;
+  --maroon-strong: #75172b;
+  --gold: #b98a45;
+  --ink: #432d32;
+  --muted: #786861;
+  --line: #dfc49b;
+  /* 80px gutters at the 1380px reference viewport. */
+  --content-max: 1220px;
+  --gutter: 80px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --shadow-card: 0 14px 34px rgb(97 52 22 / 9%);
+  --shadow-soft: 0 22px 50px rgb(90 50 25 / 10%);
+  --font-sans: "Noto Sans", "Segoe UI", Arial, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+}
+
+@media (max-width: 1199px) { :root { --gutter: 48px; } }
+@media (max-width: 767px) { :root { --gutter: 22px; } }

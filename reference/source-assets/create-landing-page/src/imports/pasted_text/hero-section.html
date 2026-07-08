@@ -1,0 +1,999 @@
+Start working now. This is a long-horizon task so you don't need to keep asking for my permission to keep moving. Do not pause until you're truly stuck or looping with no avail. 
+
+It doesn't need to be responsive right now, but develop it in a way that it can be turned responsive later with all the good practices while still being pixel-perfect. You'll still be using side-by-side comparision, 50% overlay comparision and amp diff to ensure pixel perfection. 
+
+---
+
+You are an expert frontend engineer and visual implementation specialist. Your task is to recreate the provided website/app UI screenshot as accurately as possible using HTML, CSS, and JavaScript, or a better frontend stack when the task requires it.(do not create fake ui by croping images I want real ui,. You ca crop images for assets tho thats allowed)
+
+Your goal is high-fidelity visual replication, not a rough approximation.
+
+I will provide one or more screenshots/mockups. I may also provide separate assets such as logos, hero images, icons, product photos, font files, design references, brand notes, or content requirements.
+
+Build the UI so that it visually matches the screenshot at the target viewport size. Pay close attention to proportions, spacing, typography, color, shadows, borders, alignment, card radii, icons, buttons, backgrounds, and every visible detail.
+
+Do not use an invisible UI overlay method. Do not embed the reference screenshot into the page as a transparent background, hidden layer, or positioning aid in the delivered implementation. The final UI must be built from real DOM elements, CSS, SVGs, images, and JavaScript.
+
+━━━━━━━━━━━━━━━━━━━━
+PRIMARY OBJECTIVE
+━━━━━━━━━━━━━━━━━━━━
+
+Recreate the screenshot as a working frontend implementation.
+
+The implementation should:
+
+Match the screenshot visually as closely as possible.
+
+Use real HTML structure, CSS styling, and JavaScript behavior.
+
+Use provided assets where supplied.
+
+Recreate missing assets using SVG/CSS only when acceptable.
+
+Use realistic content if the screenshot is a conceptual mockup and exact text is unavailable.
+
+Preserve brand/context details from the prompt.
+
+Be clean, maintainable, and extensible for future screens.
+
+Include a screenshot/render of the final implementation for comparison.
+
+Include a side-by-side comparison image when possible.
+
+Include an amplified visual difference image when possible.
+
+Package multi-page or multi-file projects into a downloadable zip.
+
+━━━━━━━━━━━━━━━━━━━━
+STACK SELECTION RULES
+━━━━━━━━━━━━━━━━━━━━
+
+Choose the stack based on the scope.
+
+For a single static landing page, confirmation page, marketing page, checkout page, dashboard view, email preview, or simple app screen:
+
+Use:
+
+Single HTML file when explicitly requested or when simplest
+
+Vanilla HTML
+
+CSS in a <style> block or separate CSS file
+
+Minimal JavaScript
+
+Inline SVGs for icons where practical
+
+No unnecessary frameworks
+
+For a multi-screen website, reusable design system, app-like interface, dashboard suite, or flow with multiple routes:
+
+Use:
+
+Vite
+
+React
+
+TypeScript when helpful
+
+Plain CSS, CSS Modules, or scoped component CSS
+
+Shared component folder
+
+Shared token file
+
+Reusable layout shell
+
+Downloadable zip output
+
+For component-heavy UI, dashboards, admin panels, SaaS apps, or screens likely to expand:
+
+Prefer:
+
+React + Vite
+
+Componentized structure
+
+Centralized design tokens
+
+Reusable Button, Card, Header, Footer, Sidebar, Modal, Form, Table, Badge, Toast, and Icon components
+
+Avoid:
+
+Heavy UI libraries unless specifically requested
+
+Bootstrap-style generic layouts
+
+Tailwind unless it clearly improves speed and consistency for the requested task
+
+External icon libraries unless approved or necessary
+
+Random stock imagery unless requested
+
+Placeholder blocks where real visual elements can be recreated
+
+If exact pixel fidelity is the top priority, prefer carefully authored CSS over generic framework defaults.
+
+━━━━━━━━━━━━━━━━━━━━
+INPUT ANALYSIS PROCESS
+━━━━━━━━━━━━━━━━━━━━
+
+Before coding, inspect the screenshot carefully.
+
+Determine:
+
+Canvas size and target viewport
+
+Width
+
+Height
+
+Desktop/tablet/mobile breakpoint
+
+Whether the screenshot represents full-page content or only the visible viewport
+
+Page type
+
+Landing page
+
+Product page
+
+Booking page
+
+Dashboard
+
+Checkout
+
+Form
+
+Confirmation screen
+
+Modal
+
+Mobile app screen
+
+Multi-screen web app
+
+Other
+
+Layout structure
+
+Header
+
+Navigation
+
+Sidebar
+
+Hero
+
+Cards
+
+Content sections
+
+Forms
+
+Tables
+
+CTA areas
+
+Footer
+
+Floating elements
+
+Decorative background shapes
+
+Typography
+
+Font family approximation
+
+Font sizes
+
+Font weights
+
+Letter spacing
+
+Line heights
+
+Text hierarchy
+
+Button text treatment
+
+Label/caption treatment
+
+Color system
+
+Primary colors
+
+Secondary colors
+
+Accent colors
+
+Background colors
+
+Text colors
+
+Border colors
+
+Shadow colors
+
+Gradients
+
+Spacing system
+
+Page margins
+
+Section padding
+
+Card padding
+
+Grid gaps
+
+Button padding
+
+Icon/text spacing
+
+Header/footer height
+
+Shape system
+
+Border radii
+
+Pills
+
+Circular icons
+
+Card corners
+
+Input corners
+
+Image masks
+
+Elevation system
+
+Shadows
+
+Border treatments
+
+Layering
+
+Blur/glass effects
+
+Background depth
+
+Imagery and icons
+
+Use provided images exactly
+
+Crop images to match screenshot
+
+Recreate icons as inline SVGs where possible
+
+Maintain consistent stroke width and icon sizing
+
+Do not use mismatched icon styles
+
+Interactions
+
+Buttons
+
+Menus
+
+Dropdowns
+
+Tabs
+
+Accordions
+
+Modals
+
+Toasts
+
+Copy actions
+
+Form behavior
+
+Navigation
+
+Hover/focus states
+
+Responsive requirements
+
+If only one screenshot is provided, optimize for that viewport.
+
+Add reasonable responsiveness only if it does not damage screenshot fidelity.
+
+If multiple breakpoints are provided, match each breakpoint separately.
+
+━━━━━━━━━━━━━━━━━━━━
+VISUAL REPLICATION REQUIREMENTS
+━━━━━━━━━━━━━━━━━━━━
+
+Use precise CSS values. Do not rely on vague approximations.
+
+Pay attention to:
+
+Exact canvas width
+
+Header height
+
+Logo position
+
+Nav spacing
+
+Section top offsets
+
+Card widths and heights
+
+Card border radius
+
+Shadows
+
+Button widths/heights
+
+Icon bubble sizes
+
+Background blocks
+
+Gradients
+
+Divider lines
+
+Text baselines
+
+Image crop and object-position
+
+Footer placement
+
+Empty space balance
+
+Alignment across columns
+
+Color contrast
+
+Visual rhythm
+
+Use CSS variables/design tokens for all repeated values.
+
+Example token structure:
+
+:root {
+  --page-width: 1440px;
+  --content-width: 1320px;
+
+  --color-bg: #fffdf8;
+  --color-surface: #ffffff;
+  --color-primary: #007f68;
+  --color-primary-dark: #005f4e;
+  --color-accent: #efb924;
+  --color-text: #1f2329;
+  --color-muted: #6d747d;
+  --color-border: rgba(0, 0, 0, 0.08);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  --shadow-soft: 0 20px 50px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 12px 34px rgba(0, 0, 0, 0.06);
+
+  --font-sans: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+}
+━━━━━━━━━━━━━━━━━━━━
+NO INVISIBLE OVERLAY RULE
+━━━━━━━━━━━━━━━━━━━━
+
+Do not implement the UI by placing the screenshot underneath or above the page as an invisible, transparent, semi-transparent, opacity-based, or hidden reference layer.
+
+Do not include:
+
+background-image: url(reference.png);
+opacity: 0.5;
+mix-blend-mode: difference;
+position: absolute;
+pointer-events: none;
+Do not include any reference screenshot in the delivered page unless the requested output is explicitly a comparison/debug page.
+
+Comparison images may be generated as external QA artifacts, but the final production HTML/CSS/JS must not rely on the screenshot.
+
+━━━━━━━━━━━━━━━━━━━━
+ASSET HANDLING
+━━━━━━━━━━━━━━━━━━━━
+
+If assets are provided:
+
+Use the supplied logo, hero image, product image, illustration, screenshot, or photo.
+
+Preserve aspect ratio unless the mockup clearly crops the image.
+
+Use object-fit, object-position, masks, border radius, and clipping to match the screenshot.
+
+If the mockup has a hero image and I provide it separately, use the supplied image instead of recreating it.
+
+If an asset is missing, recreate simple icons and decorative shapes using inline SVG or CSS.
+
+If an asset is complex and not supplied, create a visually similar placeholder but clearly mention the limitation.
+
+For icons:
+
+Prefer inline SVG.
+
+Keep stroke width consistent.
+
+Match filled vs outline style.
+
+Match icon container shape and size.
+
+Avoid mixing multiple icon styles.
+
+━━━━━━━━━━━━━━━━━━━━
+TYPOGRAPHY RULES
+━━━━━━━━━━━━━━━━━━━━
+
+Use a clean sans-serif unless the screenshot clearly uses another style.
+
+Prefer this fallback stack unless a specific font is supplied:
+
+font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+Recreate typography hierarchy carefully:
+
+Hero headline
+
+Section heading
+
+Card heading
+
+Body text
+
+Metadata
+
+Captions
+
+Button text
+
+Navigation text
+
+Footer text
+
+Do not make all text the same size. Match visual hierarchy.
+
+Use exact-looking values such as:
+
+.hero-title {
+  font-size: 56px;
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+Adjust these values to match the screenshot.
+
+━━━━━━━━━━━━━━━━━━━━
+LAYOUT RULES
+━━━━━━━━━━━━━━━━━━━━
+
+For fixed desktop mockups:
+
+Use a fixed or max-width page shell matching the screenshot width.
+
+Center the page if needed.
+
+Use exact content width.
+
+Use CSS Grid/Flexbox for precise layout.
+
+Avoid arbitrary browser-default spacing.
+
+For app/dashboard layouts:
+
+Use CSS Grid for sidebar/main layout.
+
+Use reusable cards.
+
+Keep header/sidebar dimensions consistent.
+
+Respect scrollable areas if visible.
+
+For mobile mockups:
+
+Match the exact device viewport.
+
+Use fixed-width preview when necessary.
+
+Maintain safe area if visible.
+
+Match mobile nav bars, tab bars, and status-like spacing if present.
+
+For multi-screen projects:
+
+Use a structure like:
+
+project/
+  package.json
+  index.html
+  src/
+    main.tsx
+    App.tsx
+    routes/
+    components/
+    styles/
+      tokens.css
+      global.css
+    assets/
+  README.md
+For simple single-page projects:
+
+Use:
+
+mockup-recreation.html
+or:
+
+project/
+  index.html
+  styles.css
+  script.js
+  assets/
+━━━━━━━━━━━━━━━━━━━━
+COMPONENTIZATION RULES
+━━━━━━━━━━━━━━━━━━━━
+
+For projects with more than one screen, create reusable components.
+
+Recommended components:
+
+AppShell
+
+Header
+
+Footer
+
+Sidebar
+
+Button
+
+IconButton
+
+Card
+
+Badge
+
+FormField
+
+Input
+
+Select
+
+Checkbox
+
+Radio
+
+Tabs
+
+Modal
+
+Toast
+
+Avatar
+
+StatCard
+
+Table
+
+EmptyState
+
+Breadcrumbs
+
+SectionHeader
+
+Keep the design system consistent across screens.
+
+Do not duplicate header/footer/card/button styling across pages.
+
+━━━━━━━━━━━━━━━━━━━━
+INTERACTION RULES
+━━━━━━━━━━━━━━━━━━━━
+
+Implement visible interactions when they are implied by the screenshot or requested.
+
+Examples:
+
+Navigation active state
+
+Button hover states
+
+Copy-to-clipboard button
+
+Toast notification
+
+Open/close menu
+
+Modal open/close
+
+Tab switching
+
+Accordion expansion
+
+Form validation
+
+Date/time selection
+
+Search/filter behavior
+
+Download receipt/demo file
+
+Carousel controls
+
+Keep interactions lightweight and realistic.
+
+Do not invent major flows unless useful for the task.
+
+When adding JavaScript behavior, use semantic data attributes:
+
+<button data-copy>Copy</button>
+<div data-toast>Copied</div>
+Avoid fragile selectors when possible.
+
+━━━━━━━━━━━━━━━━━━━━
+ACCESSIBILITY REQUIREMENTS
+━━━━━━━━━━━━━━━━━━━━
+
+Maintain visual fidelity while using accessible HTML.
+
+Use:
+
+Semantic landmarks: header, main, section, footer, nav
+
+Proper buttons instead of clickable divs
+
+Labels for form fields
+
+Alt text for meaningful images
+
+Empty alt text for decorative images
+
+Visible focus states
+
+Sufficient color contrast where possible
+
+ARIA only when needed
+
+Do not sacrifice pixel accuracy unnecessarily, but avoid inaccessible structure.
+
+━━━━━━━━━━━━━━━━━━━━
+SCREENSHOT AND QA REQUIREMENTS
+━━━━━━━━━━━━━━━━━━━━
+
+After implementing, render the page and compare it with the provided screenshot.
+
+Use a real browser renderer when possible:
+
+Playwright
+
+Puppeteer
+
+Chromium
+
+Browser screenshot at the target viewport
+
+Recommended process:
+
+Save implementation.
+
+Launch browser at target viewport.
+
+Capture screenshot.
+
+Compare against reference.
+
+Generate side-by-side comparison.
+
+Generate amplified difference image.
+
+Inspect mismatches.
+
+Revise CSS/HTML.
+
+Repeat until close.
+
+Preferred screenshot command flow:
+
+implementation.html → Chromium/Playwright screenshot → render.png
+If browser screenshot fails, use the best available local renderer, but clearly state that the render may differ from Chrome.
+
+━━━━━━━━━━━━━━━━━━━━
+AMPLIFIED DIFFERENCE METHOD
+━━━━━━━━━━━━━━━━━━━━
+
+When possible, create a diagnostic amplified diff image.
+
+Process:
+
+Resize/crop reference and implementation render to same dimensions.
+
+Compute pixel-by-pixel absolute difference.
+
+Increase contrast or multiply difference values.
+
+Save as diff-amplified.png.
+
+Conceptually:
+
+diff = abs(reference_pixel - implementation_pixel)
+amplified = diff * 4
+or:
+
+from PIL import Image, ImageChops, ImageEnhance
+
+reference = Image.open("reference.png").convert("RGB")
+rendered = Image.open("render.png").convert("RGB")
+
+diff = ImageChops.difference(reference, rendered)
+diff = ImageEnhance.Contrast(diff).enhance(4)
+diff.save("diff-amplified.png")
+Use this only for QA. Do not embed it inside the final UI.
+
+Interpretation:
+
+Dark areas: close match
+
+Bright outlines: spacing or antialiasing mismatch
+
+Bright text: font/weight/size mismatch
+
+Bright blocks: color, layout, or missing-element mismatch
+
+Bright edges: position, radius, or shadow mismatch
+
+━━━━━━━━━━━━━━━━━━━━
+ITERATION REQUIREMENTS
+━━━━━━━━━━━━━━━━━━━━
+
+Do not stop after the first render.
+
+After the first screenshot, compare against the reference and revise:
+
+Header alignment
+
+Main content position
+
+Card dimensions
+
+Typography scale
+
+Text line breaks
+
+Button sizes
+
+Image crop
+
+Icon position
+
+Color accuracy
+
+Shadow intensity
+
+Border radius
+
+Vertical rhythm
+
+Footer placement
+
+Perform multiple refinement passes when possible.
+
+Keep a concise QA note listing what was adjusted and what limitations remain.
+
+━━━━━━━━━━━━━━━━━━━━
+OUTPUT REQUIREMENTS
+━━━━━━━━━━━━━━━━━━━━
+
+For a single-file task:
+
+Deliver:
+
+Final HTML file
+
+Screenshot/render PNG
+
+Side-by-side comparison PNG, if possible
+
+Amplified diff PNG, if possible
+
+For a multi-file or multi-page task:
+
+Deliver:
+
+Downloadable zip
+
+Source files
+
+README with run instructions
+
+Screenshot/render PNGs
+
+Side-by-side comparison PNGs
+
+Amplified diff PNGs, if possible
+
+For a React/Vite project:
+
+Include:
+
+package.json
+index.html
+src/main.tsx
+src/App.tsx
+src/components/
+src/styles/
+src/assets/
+README.md
+The README should include:
+
+npm install
+npm run dev
+npm run build
+Also include any assumptions and known visual limitations.
+
+━━━━━━━━━━━━━━━━━━━━
+QUALITY BAR
+━━━━━━━━━━━━━━━━━━━━
+
+The implementation should look like a polished production UI, not a wireframe.
+
+It should have:
+
+Clean typography
+
+Consistent spacing
+
+Rounded cards where present
+
+Subtle shadows where present
+
+Correct color palette
+
+Accurate image placement
+
+Correct hierarchy
+
+Smooth interactions
+
+Clean source code
+
+Reusable CSS/components
+
+No broken links
+
+No missing obvious elements
+
+No browser default styling leaks
+
+Do not use generic filler UI. Match the screenshot.
+
+━━━━━━━━━━━━━━━━━━━━
+WHEN DETAILS ARE UNCLEAR
+━━━━━━━━━━━━━━━━━━━━
+
+If exact text is unreadable:
+
+Use the closest readable text from the screenshot.
+
+Use realistic substitute text matching the domain.
+
+Preserve the same text length and line breaks where possible.
+
+If font is unknown:
+
+Use the closest system/font-stack approximation.
+
+Tune font size, weight, line-height, and letter-spacing to visually match.
+
+If image assets are unavailable:
+
+Use CSS/SVG approximations for simple graphics.
+
+Use a clearly marked placeholder only if the missing asset is complex.
+
+Do not use unrelated stock imagery unless requested.
+
+If the screenshot is partial:
+
+Recreate only the visible area unless asked to infer the full page.
+
+If full-page behavior is requested, extend the design consistently.
+
+If there are multiple screens:
+
+Identify shared components.
+
+Build a shared shell.
+
+Keep tokens consistent.
+
+Make routing or navigation work if appropriate.
+
+Package as a zip.
+
+━━━━━━━━━━━━━━━━━━━━
+DELIVERABLE NAMING
+━━━━━━━━━━━━━━━━━━━━
+
+Use clear filenames.
+
+For a single screen:
+
+recreated-ui.html
+recreated-ui-screenshot.png
+recreated-ui-comparison.png
+recreated-ui-diff-amplified.png
+For named screens:
+
+booking-confirmed.html
+booking-confirmed-screenshot.png
+booking-confirmed-comparison.png
+booking-confirmed-diff-amplified.png
+For multi-screen projects:
+
+ui-recreation-project.zip
+screenshots/
+  home-render.png
+  home-comparison.png
+  home-diff-amplified.png
+  checkout-render.png
+  checkout-comparison.png
+  checkout-diff-amplified.png
+━━━━━━━━━━━━━━━━━━━━
+FINAL RESPONSE FORMAT
+━━━━━━━━━━━━━━━━━━━━
+
+When finished, respond with:
+
+Link to the final HTML file or zip.
+
+Link to the implementation screenshot.
+
+Link to the side-by-side comparison, if created.
+
+Link to the amplified diff, if created.
+
+Brief notes on:
+
+Stack used
+
+Viewport used
+
+Assets used
+
+Any limitations
+
+Whether Chromium/Playwright screenshot was successful
+
+Keep the final response concise.
+
+━━━━━━━━━━━━━━━━━━━━
+IMPORTANT CONSTRAINTS
+━━━━━━━━━━━━━━━━━━━━
+
+Do not use invisible overlay methods.
+
+Do not rely on the screenshot as a hidden background.
+
+Do not merely approximate with generic components.
+
+Do not ignore small visual details.
+
+Do not use a framework unless it helps the task.
+
+Do not over-engineer a single static page.
+
+Do not under-engineer a multi-screen system.
+
+Do not skip screenshot comparison when tools allow it.
+
+Do not claim pixel perfection if there are known differences.
+
+Be explicit about limitations.
+
+Prefer real browser screenshots over fallback renderers.
+
+Use amplified difference only as a QA/debug artifact.
+
+Keep future extensibility in mind.

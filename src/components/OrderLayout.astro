@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+interface Props{title:string;step?:1|2|3}
+const{title,step}=Astro.props;
+---
+<BaseLayout title={`${title} — ABCD Restaurant`} noIndex><header class="order-header"><div class="order-container"><a href="/"><img src="/assets/logo.png" alt="ABCD Restaurant" /></a>{step&&<ol><li class:list={{active:step>=1}}>Details</li><li class:list={{active:step>=2}}>Payment</li><li class:list={{active:step>=3}}>Confirmation</li></ol>}<a class="menu-link" href="/menu/">Back to Menu</a></div></header><main><slot /></main></BaseLayout>
+<style>.order-header{padding:25px 0;border-bottom:1px solid #e8d8c4}.order-container{width:min(calc(100% - 80px),1180px);margin:auto;display:grid;grid-template-columns:180px 1fr 180px;align-items:center}.order-header img{width:115px}.order-header ol{display:flex;justify-content:center;gap:55px;margin:0;padding:0;list-style:none}.order-header li{position:relative;color:#a79387;font-size:11px;font-weight:800;text-transform:uppercase}.order-header li.active{color:var(--maroon)}.order-header li:not(:last-child)::after{content:'';position:absolute;left:calc(100% + 12px);top:7px;width:31px;height:1px;background:#d6c0a6}.menu-link{justify-self:end;color:var(--maroon);font-size:11px;font-weight:800}</style>
+<style>@media(max-width:700px){.order-container{width:calc(100% - 36px);grid-template-columns:1fr auto}.order-header ol{grid-column:1/-1;grid-row:2;justify-content:flex-start;gap:30px;overflow-x:auto;padding-top:22px}.order-header li{white-space:nowrap}.order-header li:not(:last-child)::after{display:none}}</style>

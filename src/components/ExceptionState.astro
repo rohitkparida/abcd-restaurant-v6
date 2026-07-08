@@ -1,0 +1,6 @@
+---
+interface Props{icon:string;eyebrow:string;title:string;copy:string;action:string;href:string}
+const{icon,eyebrow,title,copy,action,href}=Astro.props;
+---
+<section class="exception"><img src="/assets/exceptions/logo.png" alt="ABCD Restaurant" /><div class="icon" aria-hidden="true">{icon}</div><span>{eyebrow}</span><h1>{title}</h1><p>{copy}</p><a href={href}>{action} →</a></section>
+<style>.exception{display:grid;justify-items:center;max-width:680px;margin:65px auto;padding:55px;border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:var(--shadow-soft);text-align:center}.exception>img{width:130px;margin-bottom:35px}.icon{display:grid;place-items:center;width:75px;height:75px;margin-bottom:22px;border-radius:50%;background:#f3e4d3;color:var(--maroon);font-size:34px}.exception span{color:var(--gold);font-size:11px;font-weight:800;letter-spacing:4px;text-transform:uppercase}h1{margin:14px;color:var(--maroon);font-family:var(--font-serif);font-size:48px}p{max-width:470px;color:var(--muted);font-size:15px;line-height:1.6}a{margin-top:20px;padding:13px 22px;border-radius:30px;background:var(--maroon);color:white;font-size:12px;font-weight:800}</style>
