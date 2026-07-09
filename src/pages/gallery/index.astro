@@ -1,5 +1,6 @@
 ---
 import PublicPage from '../../components/PublicPage.astro';
+import { assetPath } from '../../lib/site';
 const tiles=[
   ['ambience-main.png','Dining Room','A warm, welcoming room for everyday meals and special nights.'],
   ['gallery-1.png','Evening Lights','Soft light, bold color, and a table ready for conversation.'],
@@ -17,13 +18,13 @@ const moments=[
 <PublicPage title="Gallery — ABCD Restaurant" active="/gallery/">
     <section class="gallery-hero container">
       <div class="hero-copy"><span>ABCD in moments</span><h1>A glimpse of<br><em>our table.</em></h1><p>From intimate dinners to bright celebrations, explore the spaces, dishes, and details that bring ABCD to life.</p></div>
-      <div class="hero-collage"><img class="hero-main" src="/assets/interior.png" alt="ABCD dining room" /><img class="hero-small" src="/assets/gallery-1.png" alt="Colorful lounge" /><figure><img src="/assets/gallery-3.png" alt="Private seating" /></figure></div>
+      <div class="hero-collage"><img class="hero-main" src={assetPath('interior.png')} alt="ABCD dining room" /><img class="hero-small" src={assetPath('gallery-1.png')} alt="Colorful lounge" /><figure><img src={assetPath('gallery-3.png')} alt="Private seating" /></figure></div>
     </section>
     <section class="gallery-content container">
       <header class="section-head"><span>Our Gallery</span><h2>Scenes filled with<br><em>warmth & spice.</em></h2></header>
-      <div class="tile-grid">{tiles.map(([image,title,copy],index)=><article class:list={{large:index===0}}><img src={`/assets/${image}`} alt={title} /><div><h3>{title}</h3><p>{copy}</p></div></article>)}</div>
-      <section class="visit"><img src="/assets/exterior.png" alt="ABCD Restaurant exterior" /><div><span>Visit Malvern</span><h2>A place to arrive,<br><em>linger, and return.</em></h2><p>Every detail, from the plated biryani to the glow of the dining room, is designed to make the meal feel memorable. Browse the gallery, then reserve your table.</p><a href="/reserve/">Book Your Table <b>→</b></a></div></section>
-      <section class="moments">{moments.map(([image,title,copy])=><article><img src={`/assets/${image}`} alt={title} /><h3>{title}</h3><p>{copy}</p></article>)}</section>
+      <div class="tile-grid">{tiles.map(([image,title,copy],index)=><article class:list={{large:index===0}}><img src={assetPath(image)} alt={title} /><div><h3>{title}</h3><p>{copy}</p></div></article>)}</div>
+      <section class="visit"><img src={assetPath('exterior.png')} alt="ABCD Restaurant exterior" /><div><span>Visit Malvern</span><h2>A place to arrive,<br><em>linger, and return.</em></h2><p>Every detail, from the plated biryani to the glow of the dining room, is designed to make the meal feel memorable. Browse the gallery, then reserve your table.</p><a href="/reserve/">Book Your Table <b>→</b></a></div></section>
+      <section class="moments">{moments.map(([image,title,copy])=><article><img src={assetPath(image)} alt={title} /><h3>{title}</h3><p>{copy}</p></article>)}</section>
     </section>
     <section class="gallery-cta container"><h2>Ready to experience<br><em>ABCD in person?</em></h2><div><a href="/reserve/">Reserve a Table</a><a href="/menu/">View Our Menu →</a></div></section>
 </PublicPage>
