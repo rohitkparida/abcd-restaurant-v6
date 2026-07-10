@@ -1,19 +1,61 @@
 ---
 import PublicPage from '../../components/PublicPage.astro';
 import MenuItemCard from '../../components/MenuItemCard.astro';
-import { menuCategories, menuItems } from '../../data/menu';
+import { menuCatalog } from '../../data/menu';
+import { assetPath } from '../../lib/site';
+const navigationCategories = [
+  ['menu-nav/exported/curries.png','Appetizers'],
+  ['menu-nav/exported/biryani.png','Biryani & Bread'],
+  ['menu-nav/exported/appetizers.png','Curries'],
+  ['menu-nav/exported/desserts.png','Desserts'],
+  ['menu-nav/exported/dragon-spice.png','Dragon & Spice'],
+  ['menu-nav/exported/drinks.png','Drinks'],
+  ['menu-nav/exported/indo-chinese.png','Indo-Chinese'],
+];
 ---
 <PublicPage title="Our Menu — ABCD Restaurant" active="/menu/">
-  <section class="menu-hero"><div class="container hero-inner"><div><span>Choose a letter to begin your culinary journey.</span><h1>Our Menu</h1><img class="letters" src="/assets/menu/letter-filters.png" alt="ABCD menu filters" /><p>Rooted in rich culinary traditions of the <em>Sub-Continent</em> and crafted for <em>Global audience.</em></p></div><img class="hero-food" src="/assets/menu-hero-clean.png" alt="Indian biryani, curry, breads and accompaniments" /></div></section>
-  <nav class="category-nav container" aria-label="Menu categories">{menuCategories.map(category => <a href={`#${category.id}`}><img src={category.image} alt="" /><span>{category.label}</span></a>)}</nav>
-  <div class="menu-content container">{menuCategories.map(category => <section id={category.id} class="menu-group"><span class="eyebrow">Aromas of heritage</span><h2>{category.label}</h2><div class="items">{menuItems.filter(item => item.category === category.id).map(item => <MenuItemCard item={item} />)}</div></section>)}</div>
+  <section class="menu-hero"><div class="container hero-inner"><div><span>Choose a letter to begin your culinary journey.</span><h1>Our Menu</h1><div class="letters" role="group" aria-label="ABCD menu filters">{[['#appetizers','menu/letter-a.png','A'],['#biryani-bread','menu/letter-b.png','B'],['#curries','menu/letter-c.png','C'],['#desserts-drinks','menu/letter-d.png','D']].map(([href,image,letter]) => <a class="letter-filter" href={href}><img src={assetPath(image)} alt={letter} /></a>)}</div><p>Rooted in rich culinary traditions of the <em>Sub-Continent</em> and crafted for <em>Global audience.</em></p></div><span class="hero-food"><img src={assetPath('menu-hero-hq-generated.png')} alt="Indian biryani, curry, breads and accompaniments" /></span></div></section>
+  <nav class="category-nav container" aria-label="Menu categories">{navigationCategories.map(([image,label], index) => { const anchors=['appetizers','biryani-bread','curries','desserts-drinks','appetizers','desserts-drinks','appetizers']; return <a href={`#${anchors[index]}`}><span class="nav-icon pre-cropped-icon"><img src={assetPath(image)} alt="" /></span><span>{label}</span></a> })}</nav>
+  <div class="menu-content container">{menuCatalog.map(category => <section id={category.id} class="menu-category"><span class="category-letter">{category.letter}</span><h2 class="category-title">{category.title}</h2>{category.sections.map(section => <section id={section.id} class="menu-group"><span class="eyebrow">{category.title}</span><h2>{section.title}</h2>{section.note && <p class="section-note">{section.note}</p>}<div class="items">{section.items.map(item => <MenuItemCard item={item} />)}</div></section>)}</section>)}</div>
 </PublicPage>
 <script>
   document.addEventListener('click', event => { const button=(event.target as HTMLElement).closest<HTMLButtonElement>('[data-add-item]'); if(!button)return; const prior=button.textContent; button.textContent='Added ✓'; button.disabled=true; setTimeout(()=>{button.textContent=prior;button.disabled=false},900); });
 </script>
 <style>
-  .menu-hero { overflow:hidden; min-height:650px; }.hero-inner { position:relative; display:grid; grid-template-columns:440px 1fr; padding-top:120px; }.hero-inner > div { position:relative; z-index:2; }.hero-inner span,.eyebrow { color:var(--gold); font-size:12px; font-weight:700; letter-spacing:7px; text-transform:uppercase; }.hero-inner h1 { margin:25px 0 35px; color:var(--maroon); font-family:var(--font-serif); font-size:90px; font-weight:500; }.letters { width:360px; }.hero-inner p { width:380px; margin-top:55px; color:var(--ink); font-size:23px; line-height:1.4; }.hero-inner em { color:var(--gold); font-family:var(--font-serif); font-size:28px; }.hero-food { position:absolute; top:70px; right:-150px; width:900px; }
-  .category-nav { position:relative; z-index:3; display:grid; grid-template-columns:repeat(7,1fr); margin-top:-55px; padding:28px 35px; border:1px solid var(--line); border-radius:14px; background:var(--surface); box-shadow:var(--shadow-soft); }.category-nav a { display:grid; justify-items:center; gap:9px; border-right:1px solid #ead8bf; color:var(--maroon); font-size:10px; font-weight:700; text-align:center; }.category-nav a:last-child{border:0}.category-nav img{width:50px;height:48px;object-fit:contain}
-  .menu-content { padding-top:80px; }.menu-group { padding:45px 0 75px; scroll-margin-top:20px; }.menu-group > .eyebrow { display:block; letter-spacing:3px; text-align:center; }.menu-group h2 { display:flex; align-items:center; gap:22px; margin:8px auto 35px; color:var(--maroon); font-family:var(--font-serif); font-size:43px; font-weight:500; text-align:center; }.menu-group h2::before,.menu-group h2::after{content:'';height:1px;flex:1;background:#d9b797}.items{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-  @media(max-width:900px){.hero-inner{grid-template-columns:1fr}.hero-food{opacity:.25}.category-nav{grid-template-columns:repeat(4,1fr);gap:25px 0}.items{grid-template-columns:1fr}}
+  /* Keep each icon's measured crop attached to its asset after alphabetical reordering. */
+  .category-nav a:nth-child(1) .nav-icon{background:#562526 !important;mask:var(--icon-source) center/contain no-repeat !important}
+  .category-nav a:nth-child(1) .nav-icon img{display:none !important}
+  .category-nav a:nth-child(2) .nav-icon{background:none !important;mask:none !important}
+  .category-nav a:nth-child(2) .nav-icon img{display:block !important;width:165.28% !important;height:187.85% !important;left:-33.78% !important;top:-10.42% !important}
+  .category-nav a:nth-child(4) .nav-icon img{width:100% !important;height:166.57% !important;left:0 !important;top:-6.02% !important}
+  .category-nav a:nth-child(6) .nav-icon img{width:63.56% !important;height:162.39% !important;left:18.22% !important;top:-5.66% !important}
+  .category-nav a:nth-child(7) .nav-icon img{width:111.48% !important;height:148.54% !important;left:-5.74% !important;top:-12.49% !important}
+  .category-nav .pre-cropped-icon{background:none !important;mask:none !important}
+  .category-nav .pre-cropped-icon img{display:block !important;width:100% !important;height:100% !important;inset:0 !important;object-fit:contain !important}
 </style>
+<style>
+  .menu-hero { overflow:hidden; min-height:650px; }.hero-inner { position:relative; display:grid; grid-template-columns:440px 1fr; padding-top:80px; }.hero-inner > div { position:relative; z-index:2; }.hero-inner > div > span,.eyebrow { color:var(--gold); font-size:12px; font-weight:700; letter-spacing:7px; text-transform:uppercase; white-space:nowrap; }.hero-inner h1 { margin:25px 0 35px; color:var(--maroon); font-family:var(--font-serif); font-size:90px; font-weight:500; }.letters { position:relative; width:390px; height:69px; padding:0; }.letter-filter { position:absolute; top:0; display:grid; place-items:center; width:69px; height:69px; border:2px solid var(--gold); border-radius:50%; line-height:1; }.letter-filter::before,.letter-filter::after { position:absolute; content:''; border-radius:50%; pointer-events:none; }.letter-filter::before { inset:-7px; border:1px solid rgb(182 143 82 / 50%); }.letter-filter::after { inset:-13px; border:1px dashed rgb(182 143 82 / 40%); }.letter-filter > img { position:absolute; z-index:1; top:50%; left:50%; max-width:none; transform:translate(-50%, -50%); }.letter-filter:nth-child(1) { left:12.9px; }.letter-filter:nth-child(2) { left:118.5px; }.letter-filter:nth-child(3) { left:213.3px; }.letter-filter:nth-child(4) { left:308.1px; }.letter-filter:nth-child(1) > img { width:31px; height:51px; transform:translate(calc(-50% - 2px), calc(-50% - 9px)); }.letter-filter:nth-child(2) > img { width:21px; height:31px; }.letter-filter:nth-child(3) > img { width:27px; height:31px; }.letter-filter:nth-child(4) > img { width:31px; height:33px; }.hero-inner p { width:380px; margin-top:55px; color:var(--ink); font-size:23px; line-height:1.4; }.hero-inner em { color:var(--gold); font-family:var(--font-serif); font-size:28px; }.hero-food { position:absolute; top:46.35px; left:439.42px; width:1080.608px; height:557.352px; overflow:hidden; }.hero-food img { width:100%; height:100%; object-fit:cover; object-position:center; }
+  .category-nav { position:relative; z-index:3; display:grid; grid-template-columns:repeat(7,1fr); margin-top:-55px; padding:28px 35px; border:1px solid var(--line); border-radius:14px; background:var(--surface); box-shadow:var(--shadow-soft); }.category-nav a { display:grid; min-width:0; justify-items:center; gap:14px; border-right:1px solid #ead8bf; color:var(--maroon); font-family:'Outfit',sans-serif; font-size:14.432px; font-weight:600; text-align:center; }.category-nav a:last-child{border:0}.nav-icon{position:relative;display:block;overflow:hidden;width:83.65px;height:69.337px}.nav-icon img{position:absolute;max-width:none}.category-nav a:nth-child(1) .nav-icon img{width:165.28%;height:187.85%;left:-33.78%;top:-10.42%}.category-nav a:nth-child(2) .nav-icon{background:#562526;mask:var(--icon-source) center/contain no-repeat}.category-nav a:nth-child(2) .nav-icon img{display:none}.category-nav a:nth-child(3) .nav-icon img{width:108.92%;height:181.43%;left:-4.46%;top:-24%}.category-nav a:nth-child(4) .nav-icon img{width:111.48%;height:148.54%;left:-5.74%;top:-12.49%}.category-nav a:nth-child(5) .nav-icon img{width:126.56%;height:164.54%;left:-13.28%;top:-5.53%}.category-nav a:nth-child(6) .nav-icon img{width:100%;height:166.57%;left:0;top:-6.02%}.category-nav a:nth-child(7) .nav-icon img{width:63.56%;height:162.39%;left:18.22%;top:-5.66%}
+  .menu-content { padding-top:80px; }.menu-category{scroll-margin-top:20px}.category-letter{display:block;color:var(--gold);font-family:'Cinzel',serif;font-size:14px;letter-spacing:5px;text-align:center}.category-title{margin:6px 0 12px;color:var(--maroon);font-family:var(--font-serif);font-size:52px;font-weight:500;text-align:center}.menu-group { padding:45px 0 75px; scroll-margin-top:20px; }.menu-group > .eyebrow { display:block; letter-spacing:3px; text-align:center; }.menu-group h2 { display:flex; align-items:center; gap:22px; margin:8px auto 18px; color:var(--maroon); font-family:var(--font-serif); font-size:43px; font-weight:500; text-align:center; }.menu-group h2::before,.menu-group h2::after{content:'';height:1px;flex:1;background:#d9b797}.section-note{max-width:900px;margin:0 auto 32px;color:var(--muted);font-size:13px;line-height:1.55;text-align:center}.items{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+  @media(max-width:900px){.hero-inner{grid-template-columns:1fr}.hero-food{left:auto;right:-150px;opacity:.25}.category-nav{grid-template-columns:repeat(4,1fr);gap:25px 0}.items{grid-template-columns:1fr}}
+</style>
+<style>
+  /* Exported icons already contain their final crop; bypass the legacy positional rules. */
+  .category-nav a .pre-cropped-icon,
+  .category-nav a:nth-child(1) .pre-cropped-icon,
+  .category-nav a:nth-child(2) .pre-cropped-icon,
+  .category-nav a:nth-child(3) .pre-cropped-icon,
+  .category-nav a:nth-child(4) .pre-cropped-icon,
+  .category-nav a:nth-child(5) .pre-cropped-icon,
+  .category-nav a:nth-child(6) .pre-cropped-icon,
+  .category-nav a:nth-child(7) .pre-cropped-icon { background:none !important; mask:none !important; }
+  .category-nav a .pre-cropped-icon img,
+  .category-nav a:nth-child(1) .pre-cropped-icon img,
+  .category-nav a:nth-child(2) .pre-cropped-icon img,
+  .category-nav a:nth-child(3) .pre-cropped-icon img,
+  .category-nav a:nth-child(4) .pre-cropped-icon img,
+  .category-nav a:nth-child(5) .pre-cropped-icon img,
+  .category-nav a:nth-child(6) .pre-cropped-icon img,
+  .category-nav a:nth-child(7) .pre-cropped-icon img { display:block !important; width:100% !important; height:100% !important; inset:0 !important; object-fit:contain !important; }
+</style>
+

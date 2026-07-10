@@ -13,9 +13,12 @@ export interface MenuItem {
   price: string;
   image: string;
   category: string;
+  diet?: 'veg' | 'nonveg' | 'custom';
   vegetarian?: boolean;
   spicy?: boolean;
   featured?: boolean;
+  hideImage?: boolean;
+  hideAddButton?: boolean;
 }
 export interface ReservationState {
   step: ReservationStep;

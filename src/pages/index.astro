@@ -5,8 +5,13 @@ import SiteFooter from '../components/SiteFooter.astro';
 import PromiseCard from '../components/PromiseCard.astro';
 import { assetPath, sitePath } from '../lib/site';
 const categories = [
-  ['cat-app.png','Appetizers'], ['cat-biryani.png','Biryani & Bread'], ['cat-curry.png','Curries'],
-  ['cat-indo.png','Indo-Chinese'], ['cat-dragon.png','Dragon & Spice'], ['cat-dessert.png','Desserts'], ['cat-drink.png','Drinks'],
+  ['menu-nav/exported/curries.png','Appetizers'],
+  ['menu-nav/exported/biryani.png','Biryani & Bread'],
+  ['menu-nav/exported/appetizers.png','Curries'],
+  ['menu-nav/exported/desserts.png','Desserts'],
+  ['menu-nav/exported/dragon-spice.png','Dragon & Spice'],
+  ['menu-nav/exported/drinks.png','Drinks'],
+  ['menu-nav/exported/indo-chinese.png','Indo-Chinese'],
 ];
 const dishes = [
   ['signature-biryani-640.webp','Lucknowi Murgh Biryani','A royal classic layered with aromatic basmati and tender chicken.','$18.59'],
@@ -34,7 +39,7 @@ const gallery = ['gallery-1.png','gallery-2.png','gallery-3.png','gallery-4.png'
 
     <section class="menu-explorer container" aria-labelledby="explore-title">
       <h2 id="explore-title"><span>Explore Our Menu</span></h2>
-      <div class="category-grid">{categories.map(([image,label]) => <a href={sitePath('menu/')}><img src={assetPath(`home/${image}`)} alt="" /><strong>{label}</strong></a>)}</div>
+      <div class="category-grid">{categories.map(([image,label]) => <a href={sitePath('menu/')}><span class="nav-icon pre-cropped-icon"><img src={assetPath(image)} alt="" /></span><strong>{label}</strong></a>)}</div>
       <a class="text-link" href={sitePath('menu/')}>View Full Menu →</a>
     </section>
 
@@ -56,7 +61,7 @@ const gallery = ['gallery-1.png','gallery-2.png','gallery-3.png','gallery-4.png'
 
     <section class="why container"><svg class="why-leaf" viewBox="0 0 100 130" aria-hidden="true"><path d="M15 128C24 72 45 35 77 5M30 80C8 72 4 50 4 50c24 1 32 17 26 30M44 58c-20-11-18-31-18-31 22 7 26 22 18 31M60 39c-13-18-5-34-5-34 15 12 15 25 5 34M28 104c-19 1-27-16-27-16 22-5 31 5 27 16M49 94c-12-15-3-31-3-31 16 13 15 25 3 31M65 69c-12-12-6-26-6-26 14 9 17 20 6 26" /></svg><h2>Why Dine With Us</h2><div class="why-grid">{[['why-fresh.png','Fresh Ingredients','Sourced daily from local farms & markets.'],['why-recipes.png','Authentic Recipes','True to tradition, crafted with care.'],['why-love.png','Made with Love','Every dish includes our passion.'],['why-hosp.png','Warm Hospitality','Because you’re not just a guest, you’re family.']].map(([image,title,copy]) => <article><img src={assetPath(`home/${image}`)} alt="" /><h3>{title}</h3><p>{copy}</p></article>)}</div></section>
 
-    <section class="final-cta container"><span class="cta-art cta-art-top" aria-hidden="true"><img src={assetPath('home/cta-ornament.png')} alt="" /></span><span class="cta-art cta-art-right" aria-hidden="true"><img src={assetPath('home/cta-ornament.png')} alt="" /></span><span class="cta-logo" role="img" aria-label="ABCD Restaurant"><i></i><small>American Brand Culturally Desi</small></span><div class="cta-copy"><h2>Ready to Experience</h2><p>An Authentic Taste of India?</p><a class="light-button" href={sitePath('reserve/')}>Book a Table <span>→</span></a></div></section>
+    <section class="final-cta container"><span class="cta-art cta-art-top" aria-hidden="true"><img src={assetPath('home/cta-ornament.png')} alt="" /></span><span class="cta-art cta-art-right" aria-hidden="true"><img src={assetPath('home/cta-ornament.png')} alt="" /></span><img class="cta-leaf cta-leaf-left" src={assetPath('home/source-hq/leaf-left.png')} alt="" aria-hidden="true" /><img class="cta-leaf cta-leaf-right" src={assetPath('home/source-hq/leaf-right.png')} alt="" aria-hidden="true" /><span class="cta-logo" role="img" aria-label="ABCD Restaurant"><i></i><small>American Brand Culturally Desi</small></span><div class="cta-copy"><h2>Ready to Experience</h2><p>An Authentic Taste of India?</p><a class="light-button" href={sitePath('reserve/')}>Book a Table <span>→</span></a></div></section>
   </main>
   <SiteFooter />
 </BaseLayout>
@@ -79,7 +84,20 @@ const gallery = ['gallery-1.png','gallery-2.png','gallery-3.png','gallery-4.png'
   .menu-explorer h2::before,.menu-explorer h2::after,.why > h2::before,.why > h2::after { content:''; height:1px; flex:1; background:#ead8bf; }
   .category-grid { display: grid; grid-template-columns: repeat(7,1fr); }
   .category-grid a { display: grid; justify-items: center; gap: 10px; padding: 0 12px; border-right: 1px solid #ead8bf; color: var(--maroon); font-size: 11px; text-align: center; }
-  .category-grid a:last-child { border: 0; } .category-grid img { width: 72px; height: 65px; object-fit: contain; }
+  .category-grid a:last-child { border: 0; }
+  .category-grid a { position: relative; }
+  .nav-icon { position: relative; display: block; overflow: hidden; width: 83.65px; height: 69.337px; }
+  .nav-icon img { position: absolute; max-width: none; }
+  .category-grid a:nth-child(1) .nav-icon { background:#562526; mask:var(--icon-source) center/contain no-repeat; }
+  .category-grid a:nth-child(1) .nav-icon img { display:none; }
+  .category-grid a:nth-child(2) .nav-icon img { width: 165.28%; height: 187.85%; left: -33.78%; top: -10.42%; }
+  .category-grid a:nth-child(3) .nav-icon img { width: 108.92%; height: 181.43%; left: -4.46%; top: -24%; }
+  .category-grid a:nth-child(4) .nav-icon img { width: 100%; height: 166.57%; left: 0; top: -6.02%; }
+  .category-grid a:nth-child(5) .nav-icon img { width: 126.56%; height: 164.54%; left: -13.28%; top: -5.53%; }
+  .category-grid a:nth-child(6) .nav-icon img { width: 63.56%; height: 162.39%; left: 18.22%; top: -5.66%; }
+  .category-grid a:nth-child(7) .nav-icon img { width: 111.48%; height: 148.54%; left: -5.74%; top: -12.49%; }
+  .category-grid .pre-cropped-icon { background: none !important; mask: none !important; }
+  .category-grid .pre-cropped-icon img { display: block !important; width: 100% !important; height: 100% !important; inset: 0 !important; object-fit: contain !important; }
   .text-link { display: block; margin-top: 31px; color: var(--maroon); font-size: 11px; font-weight: 800; text-align: center; }
   .signature { display: grid; grid-template-columns: 340px 1fr; gap: 45px; padding-top: 170px; }
   .eyebrow { color: var(--gold); font-family: var(--font-serif); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; }
@@ -90,7 +108,7 @@ const gallery = ['gallery-1.png','gallery-2.png','gallery-3.png','gallery-4.png'
   .experience { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:80px; padding-top:165px; }.ambience-stack { position:relative; }.ambience,.ambience-shadow { width:100%; border-radius:14px; }.ambience { position:relative; z-index:1; box-shadow:var(--shadow-soft); }.ambience-shadow { position:absolute; inset:0; opacity:.22; filter:blur(1.5px) brightness(.7); transform:rotate(3.69deg); }.experience h2 { font-size:50px; }.gallery-row { display:grid; grid-template-columns:repeat(4,1fr); gap:25px; padding-top:95px; }.gallery-row figure { position:relative; margin:0; padding:12px 12px 25px; background:white; transform:rotate(-1deg); box-shadow:0 8px 18px rgb(65 40 25 / 5%); }.gallery-row figure:nth-child(even){transform:rotate(1deg)}.gallery-image { display:block; overflow:hidden; width:100%; aspect-ratio:1; background:#e3e2e2; }.gallery-photo { width:100%; height:100%; object-fit:cover; }.gallery-row figcaption { margin-top:12px; color:var(--muted); font-family:var(--font-serif); font-size:12px; font-style:italic; text-align:center; }
   .delivery { margin-top:140px; padding:90px 0 95px; background:var(--canvas-alt); }.delivery-frame { position:relative; padding:55px 55px 0; border:1px solid #d4a66e; border-bottom:0; border-radius:10px 10px 0 0; }.delivery h2 { width:max-content; margin:-72px auto 0; padding:0 30px; background:var(--canvas-alt); color:var(--maroon); font-family:var(--font-serif); font-size:38px; }.delivery p { margin:5px 0 42px; color:var(--gold); font-size:10px; letter-spacing:2px; text-align:center; text-transform:uppercase; }.partner-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }.partner-grid a { display:grid; place-items:center; overflow:hidden; min-height:125px; border:1px solid #dcbb89; border-radius:10px; background:var(--surface); color:var(--maroon); }.partner-grid strong { font-size:22px; }.partner-grid span { align-self:end; width:100%; padding:13px; border-radius:30px 30px 0 0; background:var(--maroon); color:white; font-size:10px; text-align:center; }
   .why { position:relative; padding-top:120px; padding-bottom:35px; }.why::before { content:'❧'; position:absolute; left:-55px; top:105px; color:#b98a45; font-family:var(--font-serif); font-size:150px; opacity:.35; transform:rotate(-28deg); }.why > h2 { margin-inline:auto; max-width:700px; font-size:17px; }.why-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:40px; text-align:center; }.why-grid img { width:82px; height:82px; object-fit:contain; margin:auto; }.why-grid h3 { color:var(--maroon); font-family:var(--font-serif); font-size:15px; }.why-grid p { color:var(--muted); font-size:10px; }
-  .final-cta { position:relative; display:grid; grid-template-columns:220px 1fr; align-items:center; min-height:315px; margin-top:110px; padding:45px 70px; overflow:hidden; border-radius:8px; background:#571621; color:white; }.cta-art { position:absolute; display:block; overflow:hidden; pointer-events:none; }.cta-art img { position:absolute; max-width:none; }.cta-logo { position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; width:210px; color:#b89047; }.cta-logo i { display:block; width:182px; height:96px; background:currentColor; mask:url('/abcd-restaurant-v6/assets/home/cta-logo-mask.png') center/contain no-repeat; }.cta-logo small { margin-top:2px; font-family:'Outfit',sans-serif; font-size:10.368px; font-weight:500; letter-spacing:1.0368px; line-height:16.589px; text-transform:uppercase; white-space:nowrap; }.cta-copy { position:relative; z-index:2; text-align:center; }.final-cta h2 { margin:0; font-family:var(--font-serif); font-size:40px; font-weight:500; }.final-cta p { margin:8px 0 20px; color:#c79b5a; font-family:var(--font-serif); font-size:28px; font-style:italic; }.light-button { display:inline-flex; align-items:center; gap:14px; padding:8px 9px 8px 28px; border-radius:var(--radius-pill); background:#faf7f2; color:#51141f; font-family:'Outfit',sans-serif; font-size:11px; font-weight:600; }.light-button span { display:grid; place-items:center; width:28px; height:28px; border-radius:50%; background:#51141f; color:#faf7f2; font-size:16px; }
+  .final-cta { position:relative; display:grid; grid-template-columns:220px 1fr; align-items:center; min-height:315px; margin-top:110px; padding:45px 70px; overflow:hidden; border-radius:8px; background:#571621; color:white; }.cta-art { position:absolute; display:block; overflow:hidden; pointer-events:none; }.cta-art img { position:absolute; max-width:none; }.cta-leaf { position:absolute; z-index:1; display:block; height:auto; pointer-events:none; }.cta-logo { position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; width:210px; color:#b89047; }.cta-logo i { display:block; width:182px; height:96px; background:currentColor; mask:url('/abcd-restaurant-v6/assets/home/cta-logo-mask.png') center/contain no-repeat; }.cta-logo small { margin-top:2px; font-family:'Outfit',sans-serif; font-size:10.368px; font-weight:500; letter-spacing:1.0368px; line-height:16.589px; text-transform:uppercase; white-space:nowrap; }.cta-copy { position:relative; z-index:2; text-align:center; }.final-cta h2 { margin:0; font-family:var(--font-serif); font-size:40px; font-weight:500; }.final-cta p { margin:8px 0 20px; color:#c79b5a; font-family:var(--font-serif); font-size:28px; font-style:italic; }.light-button { display:inline-flex; align-items:center; gap:14px; padding:8px 9px 8px 28px; border-radius:var(--radius-pill); background:#faf7f2; color:#51141f; font-family:'Outfit',sans-serif; font-size:11px; font-weight:600; }.light-button span { display:grid; place-items:center; width:28px; height:28px; border-radius:50%; background:#51141f; color:#faf7f2; font-size:16px; }
   .why::before,.final-cta::before,.final-cta::after { content:none; }
   .why-leaf { position:absolute; left:-65px; top:105px; width:145px; height:185px; fill:none; stroke:#9d7b52; stroke-width:1; opacity:.5; }
   .cta-lines { position:absolute; inset:0; width:100%; height:100%; fill:none; stroke:#b98a45; stroke-width:1; opacity:.55; }
@@ -154,6 +172,8 @@ const gallery = ['gallery-1.png','gallery-2.png','gallery-3.png','gallery-4.png'
     .cta-art-right img { left:-134px; top:-46px; width:646px; height:361px; }
     .cta-art-top { left:50%; top:5.7px; width:274.374px; height:37.196px; transform:translateX(-50%); }
     .cta-art-top img { left:-265px; top:-390px; width:804px; height:449px; }
+    .cta-leaf-left { left:22.92%; bottom:0; width:11.45%; }
+    .cta-leaf-right { left:65.11%; top:0; width:11.97%; }
     .cta-logo { position:absolute; left:55.61px; top:126.06px; width:209.52px; }
     .cta-copy { position:absolute; inset:0; }
     .final-cta h2 { position:absolute; top:96px; left:0; width:100%; font-size:47.493px; line-height:57.585px; font-weight:500; }
